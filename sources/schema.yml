@@ -1,0 +1,69 @@
+version: 2
+
+sources:
+  - name: match_recognize
+    schema: dbt_match_recognize
+    loader: manual
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: raw_logs
+        description: '{{ doc("raw_logs") }}'
+
+
+        columns:
+          - name: ts
+            description: timestamp of the visit
+
+      - name: raw_messages
+        description: '{{ doc("raw_messages") }}'
+
+        columns:
+          - name: id
+          - name: marker
+            tests:
+              - accepted_values:
+                  values: ['|', 'X']
+
+      - name: raw_comments
+        description: '{{ doc("raw_comments") }}'
+
+
+        columns:
+          - name: topic
+            description: forum topic
+          - name: txt
+            description: message content
+          - name: ts
+            description: creation timestamp of the message
+
+      - name: raw_reservations
+        description: >
+          This table simulates the timeline of reservations for a Airbnb house.
+          `MATCH_RECOGNIZE` is used to find the availability periods for the house.
+
+          This example has been retrieved from https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+        columns:
+          - name: id
+
+          - name: begin_ts
+            description: booking start timestamp
+
+          - name: end_ts
+            description: reservation end timestamp
+
+      - name: raw_stock_prices
+        description: '{{ doc("raw_stock_prices") }}'
+
+        columns:
+          - name: company
+            description: stock exchange symbol for the company
+
+          - name: price_date
+
+          - name: price

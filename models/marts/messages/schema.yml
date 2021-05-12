@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fct_new_message
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model showcases the ability to retrieve via `MATCH_RECOGNIZE` several rows that match
+      the specified pattern.
+
+  - name: fct_new_message_extended
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model showcases the ability to retrieve via `MATCH_RECOGNIZE` several rows that match
+      the specified pattern.
+      This model extends `fct_new_message` by adding a components to the pattern for catching
+      eventually first/last items from the list of elements to be evaluated.
+
+  - name: fct_new_message_grouped_gaps
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model showcases the `MATCH_RECOGNIZE` ability to exclude from the output part of
+      rows which match an exclusion pattern.

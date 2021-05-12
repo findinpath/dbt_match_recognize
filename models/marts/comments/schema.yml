@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fct_top_n_comments_per_topic
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model is using `MATCH_RECOGNIZE` function for retrieving the top 3
+      oldest comments per topic on a fictional forum.
+
+  - name: fct_top_n_comments_per_topic_via_row_number
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model contains the same data as the model `fct_top_n_comments_per_topic`.
+      The difference is that this model is built by using window functions.

@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_availability_intervals
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      Like the name of the model states, it provides the availability intervals for a
+      fictional Airbnb house.
+
+  - name: fct_availability_intervals_window_function
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model contains the same data as the model `fct_availability_intervals`.
+      The difference is that this model is built by using window functions.
+
+      Like the name of the model states, it provides the availability intervals for a
+      fictional Airbnb house.
+
+  - name: fct_occupancy_overview
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This model shows both the reservations as well as the availability dates for a
+      fictional Airbnb house.

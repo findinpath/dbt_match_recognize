@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fct_v_shape_stock_price
+    description: '{{ doc("fct_v_shape_stock_price") }}'

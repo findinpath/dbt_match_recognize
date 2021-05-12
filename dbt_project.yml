@@ -1,0 +1,54 @@
+name: 'match_recognize'
+version: '1.0'
+config-version: 2
+require-dbt-version: ">=0.19.1"
+
+profile: 'match_recognize'
+
+source-paths: ["models", "sources"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+# directory which will store compiled SQL files
+target-path: "target"
+
+# directories to be removed by `dbt clean`
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  - "logs"
+
+models:
+  match_recognize:
+      materialized: table
+
+# consult https://docs.getdbt.com/reference/seed-configs for details
+seeds:
+  match_recognize:
+    +enabled: true
+    +quote_columns: false
+    raw_logs:
+      +column_types:
+        ts: timestamp
+    raw_messages:
+      +column_types:
+        id: number
+        marker: varchar(1)
+    raw_comments:
+      +column_types:
+        topic: varchar(256)
+        txt: varchar(4096)
+        ts: timestamp
+    raw_reservations:
+      +column_types:
+        id: number
+        begin_ts: timestamp
+        end_ts: timestamp
+    raw_stock_prices:
+      +column_types:
+        company: text
+        price_date: date
+        price: int
+

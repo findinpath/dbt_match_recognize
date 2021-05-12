@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fct_session_begin
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This query is a really simple one used to get started with `MATCH_RECOGNIZE`.
+      The purpose of the model is to collect the beginning of each session made while
+      visiting a fictional site.
+
+
+  - name: fct_session_count
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This query is a really simple one used to get started with `MATCH_RECOGNIZE`.
+      This model is almost identical to `fct_session_begin`.
+      The purpose of this model is to count the number of sesions made while
+      visiting a fictional site.
+
+  - name: fct_session_stat
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This query can be considered as a good starter for using the clause
+      `one row per match` for `MATCH_RECOGNIZE`.
+      The purpose of the model is to provide the number of sessions and also their average duration.
+
+  - name: fct_session_summary
+    description: >
+      The query corresponding to this model is described in great detail on the presentation
+      https://www.slideshare.net/MarkusWinand/row-pattern-matching-in-sql2016
+
+      This query can be considered as a good starter for using the clause
+      `one row per match` for `MATCH_RECOGNIZE`.

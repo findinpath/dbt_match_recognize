@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_logs
+    description: Staging table corresponding to the `raw_logs` source table.
+
+  - name: stg_comments
+    description: Staging table corresponding to the `raw_comments` source table.
+
+  - name: stg_messages
+    description: Staging table corresponding to the `raw_messages` source table.
+
+  - name: stg_reservations
+    description: Staging table corresponding to the `raw_reservations` source table.
+
+  - name: stg_stock_prices
+    description: Staging table corresponding to the `raw_stock_prices` source table.
+
